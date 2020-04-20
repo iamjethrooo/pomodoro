@@ -23,14 +23,38 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 6px solid white;
-  height: 350px;
-  width: 350px;
-  border-radius: 50%; }
+  /* border: 6px solid #364249; */
+  position: relative;
+  height: 375px;
+  width: 375px;
+  /* border-radius: 50%; */ }
+
+.svg {
+  transform: scaleX(-1); }
+
+.circle {
+  fill: none;
+  stroke: none; }
+
+#status {
+  position: absolute;
+  height: 55%; }
 
 #timer {
+  position: absolute;
   font-size: 75px;
-  height: 50%; }
+  height: 25%; }
+
+#path-elapsed {
+  stroke-width: 1px;
+  stroke: #364249; }
+
+#path-remaining {
+  stroke-width: 1px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  stroke: white; }
 
 /* Buttons */
 /* Buttons */
