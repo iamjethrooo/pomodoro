@@ -46,11 +46,11 @@ body {
   height: 25%; }
 
 #path-elapsed {
-  stroke-width: 1px;
+  stroke-width: 1.5px;
   stroke: #364249; }
 
 #path-remaining {
-  stroke-width: 1px;
+  stroke-width: 1.5px;
   stroke-linecap: round;
   transform: rotate(90deg);
   transform-origin: center;
