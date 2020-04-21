@@ -17,7 +17,7 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -27,11 +27,9 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* border: 6px solid #364249; */
   position: relative;
   height: 375px;
   width: 375px;
-  /* border-radius: 50%; */
 }
 
 .svg {
@@ -71,6 +69,50 @@ main {
 
 /* Buttons */
 
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  button {
+    margin: 0 50px;
+  }
+}
+.pause-play {
+  border: 0;
+  background: transparent;
+  width: 0;
+  height: 30px;
+
+  border-color: transparent transparent transparent #cfd8dc;
+
+  transition: 100ms all ease;
+
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+
+  &.playing {
+    border-style: double;
+    border-width: 0 0 0 25px;
+  }
+}
+
+.stop {
+  border: 0;
+  background: transparent;
+  width: 0;
+  height: 15px;
+
+  border-color: #cfd8dc;
+
+  border-style: solid;
+  border-width: 15px;
+}
+
+.pause-play,
+.stop {
+  outline: none;
+}
 /* Buttons */
 
 /* Footer */
@@ -98,25 +140,21 @@ footer {
 
 #settings {
   float: left;
-  margin: 10px;
+  margin: 5px;
+  padding: 10px;
+  outline: none;
   background: transparent;
   border-radius: 100%;
   border: none;
+  color: #cfd8dc;
   &:hover {
-    animation: pulse 2s;
+    background: rgba(207, 216, 220, 0.75);
+    color: #263238;
   }
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0;
-    opacity: 0;
-  }
-  100% {
-    box-shadow: 0 0 0 10px white;
-    background: white;
-    opacity: 100;
-  }
+i {
+  color: inherit;
 }
 
 .fas {
