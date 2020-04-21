@@ -9,37 +9,35 @@
   <body>
     <button id="settings"><i class="fas fa-cog"></i></button>
     <main>
-      <div class="main-container">
-        <div class="clock-container">
-          <svg
-            class="svg"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g class="circle">
-              <circle id="path-elapsed" cx="50" cy="50" r="45"></circle>
-              <path
-                id="path-remaining"
-                stroke-dasharray="283 283"
-                d="
+      <div class="clock-container">
+        <svg
+          class="svg"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g class="circle">
+            <circle id="path-elapsed" cx="50" cy="50" r="45"></circle>
+            <path
+              id="path-remaining"
+              stroke-dasharray="283 283"
+              d="
           M 50, 50
           m -45, 0
           a 45,45 0 1,0 90,0
           a 45,45 0 1,0 -90,0
          "
-              ></path>
-            </g>
-          </svg>
+            ></path>
+          </g>
+        </svg>
 
-          <div id="status">Pomodoro</div>
-          <div id="timer">
-            <span id="minutes"></span>:<span id="seconds"></span>
-          </div>
+        <div id="status">Pomodoro</div>
+        <div id="timer">
+          <span id="minutes"></span>:<span id="seconds"></span>
         </div>
-        <div class="button-container">
-          <button class="pause-play play">PLAY</button>
-          <button class="stop">STOP</button>
-        </div>
+      </div>
+      <div class="button-container">
+        <button class="pause-play"></button>
+        <button class="stop"></button>
       </div>
     </main>
     <footer>
