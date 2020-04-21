@@ -7,7 +7,26 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <button id="settings"><i class="fas fa-cog"></i></button>
+    <button id="settings-button"><i class="fas fa-cog"></i></button>
+    <div id="settings-wrap">
+      <div id="settings">
+        <div class="setting">
+          <span class="name">Pomodoro duration</span>
+          <span class="pomodoro-duration right"></span>
+          <input type="range" min="1" max="120" class="pomodoro-slider slider"></input>
+        </div>
+        <div class="setting">
+          <span class="name">Break duration</span>
+          <span class="break-duration right"">5 minutes</span>
+          <input type="range" min="1" max="120" class="break-slider slider"></input>
+        </div>
+        <div class="setting">
+          <span class="name">Long break duration</span>
+          <span class="long-break-duration right"">15 minutes</span>
+          <input type="range" min="1" max="120" class="long-break-slider slider"></input>
+        </div>
+      </div>
+    </div>
     <main>
       <div class="clock-container">
         <svg
