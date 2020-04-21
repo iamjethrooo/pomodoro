@@ -9,11 +9,12 @@ PLAY_PAUSE.addEventListener("click", () => {
   startTimer();
 });
 let timer;
-let mins = 0;
-let secs = 10;
+let mins = 25;
+let secs = 00;
 let count = 0;
-let shortBreak = 5; // Minutes
-let longBreak = 15; // Minutes
+let shortBreakTime = 5; // Minutes
+let longBreakTime = 15; // Minutes
+let longBreak = 4; // Pomodoros before long break
 const FULL_DASH_ARRAY = 283;
 
 const MINUTES = document.querySelector("#minutes");
@@ -51,10 +52,10 @@ function startTimer() {
       if (mins == 0) {
         count++;
         STATUS.textContent = "Break Time!";
-        if (count % 4 == 0) {
-          mins = longBreak;
+        if (count % longBreak == 0) {
+          mins = longBreakTime;
         } else {
-          mins = shortBreak;
+          mins = shortBreakTime;
         }
         TIME_LIMIT = mins * 60;
         timePassed = 0;
@@ -74,3 +75,30 @@ document.addEventListener("DOMContentLoaded", () => {
   MINUTES.textContent = pad(mins);
   SECS.textContent = pad(secs);
 });
+
+// Settings
+const SETTINGS = document.querySelector("#settings-button");
+const SETTINGS_WRAP = document.querySelector("#settings-wrap");
+SETTINGS.addEventListener("click", () => {
+  SETTINGS_WRAP.classList.toggle("visible");
+});
+
+const POMODORO_DURATION = document.querySelector(".pomodoro-duration");
+const BREAK_DURATION = document.querySelector(".break-duration");
+const LONG_BREAK_DURATION = document.querySelector(".long-break-duration");
+
+const POMODORO_SLIDER = document.querySelector(".pomodoro-slider");
+const BREAK_SLIDER = document.querySelector(".break-slider");
+const LONG_BREAK_SLIDER = document.querySelector(".long-break-slider");
+
+POMODORO_SLIDER.setAttribute("value", mins);
+BREAK_SLIDER.setAttribute("value", shortBreakTime);
+LONG_BREAK_SLIDER.setAttribute("value", longBreakTime);
+
+POMODORO_DURATION.textContent = `${POMODORO_SLIDER.getAttribute(
+  "value"
+)} minutes`;
+BREAK_DURATION.textContent = `${BREAK_SLIDER.getAttribute("value")} minutes`;
+LONG_BREAK_DURATION.textContent = `${LONG_BREAK_SLIDER.getAttribute(
+  "value"
+)} minutes`;
