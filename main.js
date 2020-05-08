@@ -100,6 +100,9 @@ const SETTINGS_WRAP = document.querySelector("#settings-wrap");
 SETTINGS.addEventListener("click", () => {
   SETTINGS_WRAP.classList.toggle("visible");
 });
+SETTINGS_WRAP.addEventListener("click", () => {
+  SETTINGS_WRAP.classList.toggle("visible");
+});
 
 const POMODORO_DURATION = document.querySelector(".pomodoro-duration");
 const BREAK_DURATION = document.querySelector(".break-duration");

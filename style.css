@@ -198,4 +198,8 @@ footer {
 i {
   color: inherit; }
 
+@media only screen and (max-width: 420px) {
+  #settings {
+    width: 90%; } }
+
 /*# sourceMappingURL=style.css.map */
