@@ -3,6 +3,7 @@ const STOP = document.querySelector(".stop");
 
 PLAY_PAUSE.addEventListener("click", () => {
   PLAY_PAUSE.classList.toggle("playing");
+  // If button is triangle(play)
   if (!PLAY_PAUSE.classList[1]) {
     clearTimeout(timer);
     return;
@@ -11,11 +12,19 @@ PLAY_PAUSE.addEventListener("click", () => {
 });
 
 STOP.addEventListener("click", () => {
+  // If stop button is clicked while timer is running
+  if (PLAY_PAUSE.classList[1]) {
+    PLAY_PAUSE.classList.remove("playing");
+  }
+  // Reset
   clearTimeout(timer);
   mins = pomodoro;
   secs = 0;
   count = 0;
+  TIME_LIMIT = mins * 60 + secs;
+  timeLeft = TIME_LIMIT;
   init();
+  updateCircle();
 });
 
 let timer;
